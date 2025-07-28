@@ -1,0 +1,37 @@
+{
+  "start": {
+    "method": "POST",
+    "url": "/api/v1/transcriptions",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9...",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "audioId": "550e8400-e29b-41d4-a716-446655440011",
+      "language": "en",
+      "enableDiarization": true,
+      "maxSpeakers": 6
+    }
+  },
+  "list": {
+    "method": "GET",
+    "url": "/api/v1/transcriptions?page=0&size=10&sort=createdAt,desc",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  },
+  "get": {
+    "method": "GET",
+    "url": "/api/v1/transcriptions/{transcriptionId}",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  },
+  "delete": {
+    "method": "DELETE",
+    "url": "/api/v1/transcriptions/{transcriptionId}",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  }
+}

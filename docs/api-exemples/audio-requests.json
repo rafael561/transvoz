@@ -1,0 +1,32 @@
+{
+  "upload": {
+    "method": "POST",
+    "url": "/api/v1/audio/upload",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9...",
+      "Content-Type": "multipart/form-data"
+    },
+    "body": "FormData with 'file' field containing audio file"
+  },
+  "list": {
+    "method": "GET",
+    "url": "/api/v1/audio?page=0&size=10&sort=createdAt,desc",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  },
+  "get": {
+    "method": "GET",
+    "url": "/api/v1/audio/{audioId}",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  },
+  "delete": {
+    "method": "DELETE",
+    "url": "/api/v1/audio/{audioId}",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9..."
+    }
+  }
+}

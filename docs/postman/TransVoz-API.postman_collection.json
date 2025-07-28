@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "TransVoz API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "c3e2f3c5-4e9e-4d58-9d5f-1234567890ab"
+  },
+  "item": [
+    {
+      "name": "Auth ▸ Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/v1/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"StrongPass123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Auth ▸ Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/v1/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"StrongPass123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Audio ▸ Upload",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/audio/upload",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Transcription ▸ Start",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{accessToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{baseUrl}}/api/v1/transcriptions",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"audioId\": \"{{audioId}}\",\n  \"language\": \"en\",\n  \"enableDiarization\": true,\n  \"maxSpeakers\": 6\n}"
+        }
+      }
+    },
+    {
+      "name": "Webhook ▸ Example callback",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/api/v1/webhook/transcription",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jobId\": \"ext_job_001\",\n  \"status\": \"completed\",\n  \"text\": \"...\",\n  \"language\": \"en\",\n  \"confidence\": 0.95,\n  \"processingTime\": 40,\n  \"speakers\": []\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "accessToken", "value": "" },
+    { "key": "audioId", "value": "" }
+  ]
+}

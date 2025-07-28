@@ -1,0 +1,45 @@
+{
+  "transcription_completed": {
+    "method": "POST",
+    "url": "/api/v1/webhook/transcription",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "jobId": "ext_job_001",
+      "status": "completed",
+      "text": "Hello everyone, welcome to our meeting today. We have several important topics to discuss.",
+      "language": "en",
+      "confidence": 0.95,
+      "processingTime": 45,
+      "speakers": [
+        {
+          "speaker": "speaker_0",
+          "startTime": 0.0,
+          "endTime": 15.5,
+          "text": "Hello everyone, welcome to our meeting today.",
+          "confidence": 0.96
+        },
+        {
+          "speaker": "speaker_0",
+          "startTime": 15.5,
+          "endTime": 32.1,
+          "text": "We have several important topics to discuss.",
+          "confidence": 0.94
+        }
+      ]
+    }
+  },
+  "transcription_failed": {
+    "method": "POST",
+    "url": "/api/v1/webhook/transcription",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "jobId": "ext_job_002",
+      "status": "failed",
+      "errorMessage": "Audio format not supported"
+    }
+  }
+}
