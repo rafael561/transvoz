@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TransVoz - Audio Transcription Service
 
 TransVoz is a comprehensive audio transcription service with speaker diarization capabilities, built with Java 24, Spring Boot 3.4, and PostgreSQL 15.
@@ -35,3 +36,7 @@ TransVoz is a comprehensive audio transcription service with speaker diarization
 ### Development Setup
 
 1. **Clone the repository**
+=======
+# transvoz
+Apolicativo de transcrição de áudio e vídeo.
+>>>>>>> b57eef55511e6b00c97fad371aaefac7c51d23ec
